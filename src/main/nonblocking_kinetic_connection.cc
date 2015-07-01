@@ -37,6 +37,8 @@ using com::seagate::kinetic::client::proto::Command_MessageType_SETUP;
 using com::seagate::kinetic::client::proto::Command_MessageType_GETLOG;
 using com::seagate::kinetic::client::proto::Command_MessageType_SECURITY;
 using com::seagate::kinetic::client::proto::Command_MessageType_PEER2PEERPUSH;
+using com::seagate::kinetic::client::proto::Command_MessageType_MEDIASCAN;
+using com::seagate::kinetic::client::proto::Command_MessageType_MEDIAOPTIMIZE;
 using com::seagate::kinetic::client::proto::Command_MessageType_PINOP;
 using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_AUTHORIZED;
 using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_FOUND;
@@ -728,7 +730,6 @@ void NonblockingKineticConnection::PopulateP2PMessage(
 HandlerKey NonblockingKineticConnection::P2PPush(
         const shared_ptr<const P2PPushRequest> push_request,
         const shared_ptr<P2PPushCallbackInterface> callback) {
-
     unique_ptr<Message> msg(new Message());
     msg->set_authtype(Message_AuthType_HMACAUTH);
     unique_ptr<Command> request = NewCommand(Command_MessageType_PEER2PEERPUSH);
@@ -738,6 +739,42 @@ HandlerKey NonblockingKineticConnection::P2PPush(
 
     unique_ptr<P2PPushHandler> handler(new P2PPushHandler(callback));
     return service_->Submit(move(msg), move(request), empty_str_, move(handler));
+}
+
+HandlerKey NonblockingKineticConnection::MediaScan(const shared_ptr<const MediaScanRequest> media_scan_request,
+    const shared_ptr<SimpleCallbackInterface> callback) {
+    unique_ptr<SimpleHandler> handler(new SimpleHandler(callback));
+    unique_ptr<Message> msg(new Message());
+    msg->set_authtype(Message_AuthType_HMACAUTH);
+    unique_ptr<Command> request = NewCommand(Command_MessageType_MEDIASCAN);
+
+    request->mutable_header()->set_priority(media_scan_request->priority);
+    request->mutable_body()->set_allocated_range(media_scan_request->range);
+
+    return service_->Submit(move(msg), move(request), empty_str_, move(handler));
+}
+
+HandlerKey NonblockingKineticConnection::MediaScan(const MediaScanRequest& media_scan_reques,
+		const shared_ptr<SimpleCallbackInterface> callback) {
+	return this->MediaScan(make_shared<MediaScanRequest>(media_scan_reques), callback);
+}
+
+HandlerKey NonblockingKineticConnection::MediaOptimize(const shared_ptr<const MediaOptimizeRequest> media_optimize_request,
+		const shared_ptr<SimpleCallbackInterface> callback) {
+    unique_ptr<SimpleHandler> handler(new SimpleHandler(callback));
+    unique_ptr<Message> msg(new Message());
+    msg->set_authtype(Message_AuthType_HMACAUTH);
+    unique_ptr<Command> request = NewCommand(Command_MessageType_MEDIAOPTIMIZE);
+
+    request->mutable_header()->set_priority(media_optimize_request->priority);
+    request->mutable_body()->set_allocated_range(media_optimize_request->range);
+
+    return service_->Submit(move(msg), move(request), empty_str_, move(handler));
+}
+
+HandlerKey NonblockingKineticConnection::MediaOptimize(const MediaOptimizeRequest& media_optimize_request,
+		const shared_ptr<SimpleCallbackInterface> callback) {
+	return this->MediaOptimize(make_shared<MediaScanRequest>(media_optimize_request), callback);
 }
 
 bool NonblockingKineticConnection::RemoveHandler(HandlerKey handler_key) {
