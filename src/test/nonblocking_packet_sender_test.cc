@@ -32,8 +32,8 @@ using ::testing::_;
 using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::StrictMock;
-using com::seagate::kinetic::client::proto::Command_MessageType_GET_RESPONSE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Command_MessageType_GET_RESPONSE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
 
 using std::string;
 using std::make_shared;

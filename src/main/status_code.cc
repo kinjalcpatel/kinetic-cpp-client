@@ -19,25 +19,25 @@
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_INVALID_STATUS_CODE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_HMAC_FAILURE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_AUTHORIZED;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_FOUND;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_INTERNAL_ERROR;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_HEADER_REQUIRED;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_VERSION_FAILURE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_VERSION_MISMATCH;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SERVICE_BUSY;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_EXPIRED;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_DATA_ERROR;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_PERM_DATA_ERROR;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_REMOTE_CONNECTION_ERROR;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NO_SPACE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NO_SUCH_HMAC_ALGORITHM;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_INVALID_REQUEST;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NESTED_OPERATION_ERRORS;
+using com::seagate::kinetic::proto::Command_Status_StatusCode;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_INVALID_STATUS_CODE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_HMAC_FAILURE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NOT_AUTHORIZED;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NOT_FOUND;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_INTERNAL_ERROR;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_HEADER_REQUIRED;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_VERSION_FAILURE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_VERSION_MISMATCH;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SERVICE_BUSY;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_EXPIRED;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_DATA_ERROR;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_PERM_DATA_ERROR;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_REMOTE_CONNECTION_ERROR;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NO_SPACE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NO_SUCH_HMAC_ALGORITHM;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_INVALID_REQUEST;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NESTED_OPERATION_ERRORS;
 
 StatusCode ConvertFromProtoStatus(Command_Status_StatusCode status) {
     switch (status) {

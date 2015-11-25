@@ -27,8 +27,8 @@ using ::testing::SaveArg;
 using ::testing::StrictMock;
 using ::testing::MatcherInterface;
 using ::testing::Matcher;
-using com::seagate::kinetic::client::proto::Command_Algorithm_SHA1;
-using com::seagate::kinetic::client::proto::Command_Algorithm_CRC64;
+using com::seagate::kinetic::proto::Command_Algorithm_SHA1;
+using com::seagate::kinetic::proto::Command_Algorithm_CRC64;
 
 using std::make_shared;
 using std::string;

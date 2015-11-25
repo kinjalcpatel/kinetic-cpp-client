@@ -19,7 +19,7 @@
 #define NONBLOCKING_KINETIC_CONNECTION_INTERFACE_H_
 
 #include "kinetic/common.h"
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "kinetic/kinetic_record.h"
 #include "kinetic/drive_log.h"
 #include "kinetic/acls.h"
@@ -33,11 +33,11 @@
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Command;
-using com::seagate::kinetic::client::proto::Command_MessageType;
-using com::seagate::kinetic::client::proto::Command_P2POperation;
-using com::seagate::kinetic::client::proto::Command_Synchronization;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type;
+using com::seagate::kinetic::proto::Command;
+using com::seagate::kinetic::proto::Command_MessageType;
+using com::seagate::kinetic::proto::Command_P2POperation;
+using com::seagate::kinetic::proto::Command_Synchronization;
+using com::seagate::kinetic::proto::Command_GetLog_Type;
 
 using std::shared_ptr;
 using std::unique_ptr;

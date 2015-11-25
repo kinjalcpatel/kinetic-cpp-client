@@ -22,8 +22,8 @@
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Message_AuthType_UNSOLICITEDSTATUS;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Message_AuthType_UNSOLICITEDSTATUS;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
 using std::string;
 using std::shared_ptr;
 using std::unique_ptr;

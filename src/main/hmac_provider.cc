@@ -26,7 +26,7 @@
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Message;
+using com::seagate::kinetic::proto::Message;
 
 HmacProvider::HmacProvider() {}
 

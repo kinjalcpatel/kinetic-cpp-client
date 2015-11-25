@@ -41,10 +41,10 @@ using ::testing::_;
 using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::StrictMock;
-using com::seagate::kinetic::client::proto::Command_MessageType_GET_RESPONSE;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
-using com::seagate::kinetic::client::proto::Message_AuthType_HMACAUTH;
-using com::seagate::kinetic::client::proto::Message_AuthType_UNSOLICITEDSTATUS;
+using com::seagate::kinetic::proto::Command_MessageType_GET_RESPONSE;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Message_AuthType_HMACAUTH;
+using com::seagate::kinetic::proto::Message_AuthType_UNSOLICITEDSTATUS;
 
 using std::string;
 using std::make_shared;

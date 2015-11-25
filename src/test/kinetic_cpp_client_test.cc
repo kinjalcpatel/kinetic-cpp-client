@@ -21,8 +21,7 @@
 
 #include "gtest/gtest.h"
 #include "glog/logging.h"
-
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "mock_callbacks.h"
 
 int main(int argc, char *argv[]) {

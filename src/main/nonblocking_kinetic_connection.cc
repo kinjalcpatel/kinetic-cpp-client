@@ -22,45 +22,45 @@
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Command_MessageType_DELETE;
-using com::seagate::kinetic::client::proto::Command_MessageType_GET;
-using com::seagate::kinetic::client::proto::Command_MessageType_GETNEXT;
-using com::seagate::kinetic::client::proto::Command_MessageType_GETPREVIOUS;
-using com::seagate::kinetic::client::proto::Command_MessageType_GETKEYRANGE;
-using com::seagate::kinetic::client::proto::Command_MessageType_GETVERSION;
-using com::seagate::kinetic::client::proto::Command_MessageType_NOOP;
-using com::seagate::kinetic::client::proto::Command_MessageType_PUT;
-using com::seagate::kinetic::client::proto::Command_MessageType_SETUP;
-using com::seagate::kinetic::client::proto::Command_MessageType_GETLOG;
-using com::seagate::kinetic::client::proto::Command_MessageType_SECURITY;
-using com::seagate::kinetic::client::proto::Command_MessageType_PEER2PEERPUSH;
-using com::seagate::kinetic::client::proto::Command_MessageType_PINOP;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_AUTHORIZED;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_NOT_FOUND;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_UTILIZATIONS;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_TEMPERATURES;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_CAPACITIES;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_CONFIGURATION;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_STATISTICS;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_MESSAGES;
-using com::seagate::kinetic::client::proto::Command_GetLog_Type_LIMITS;
-using com::seagate::kinetic::client::proto::Command_Security_ACL;
-using com::seagate::kinetic::client::proto::Command_Security_ACL_Permission;
-using com::seagate::kinetic::client::proto::Command_Security_ACL_Scope;
-using com::seagate::kinetic::client::proto::Command_Security_ACL_HMACAlgorithm_HmacSHA1;
-using com::seagate::kinetic::client::proto::Command_Status;
-using com::seagate::kinetic::client::proto::Command_P2POperation;
-using com::seagate::kinetic::client::proto::Command_Synchronization;
-using com::seagate::kinetic::client::proto::Command_Synchronization_FLUSH;
-using com::seagate::kinetic::client::proto::Command_Synchronization_WRITEBACK;
-using com::seagate::kinetic::client::proto::Command_Synchronization_WRITETHROUGH;
-using com::seagate::kinetic::client::proto::Command_PinOperation_PinOpType_UNLOCK_PINOP;
-using com::seagate::kinetic::client::proto::Command_PinOperation_PinOpType_LOCK_PINOP;
-using com::seagate::kinetic::client::proto::Command_PinOperation_PinOpType_ERASE_PINOP;
-using com::seagate::kinetic::client::proto::Command_PinOperation_PinOpType_SECURE_ERASE_PINOP;
-using com::seagate::kinetic::client::proto::Message_AuthType_PINAUTH;
-using com::seagate::kinetic::client::proto::Message_AuthType_HMACAUTH;
+using com::seagate::kinetic::proto::Command_MessageType_DELETE;
+using com::seagate::kinetic::proto::Command_MessageType_GET;
+using com::seagate::kinetic::proto::Command_MessageType_GETNEXT;
+using com::seagate::kinetic::proto::Command_MessageType_GETPREVIOUS;
+using com::seagate::kinetic::proto::Command_MessageType_GETKEYRANGE;
+using com::seagate::kinetic::proto::Command_MessageType_GETVERSION;
+using com::seagate::kinetic::proto::Command_MessageType_NOOP;
+using com::seagate::kinetic::proto::Command_MessageType_PUT;
+using com::seagate::kinetic::proto::Command_MessageType_SETUP;
+using com::seagate::kinetic::proto::Command_MessageType_GETLOG;
+using com::seagate::kinetic::proto::Command_MessageType_SECURITY;
+using com::seagate::kinetic::proto::Command_MessageType_PEER2PEERPUSH;
+using com::seagate::kinetic::proto::Command_MessageType_PINOP;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NOT_AUTHORIZED;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_NOT_FOUND;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Command_GetLog_Type_UTILIZATIONS;
+using com::seagate::kinetic::proto::Command_GetLog_Type_TEMPERATURES;
+using com::seagate::kinetic::proto::Command_GetLog_Type_CAPACITIES;
+using com::seagate::kinetic::proto::Command_GetLog_Type_CONFIGURATION;
+using com::seagate::kinetic::proto::Command_GetLog_Type_STATISTICS;
+using com::seagate::kinetic::proto::Command_GetLog_Type_MESSAGES;
+using com::seagate::kinetic::proto::Command_GetLog_Type_LIMITS;
+using com::seagate::kinetic::proto::Command_Security_ACL;
+using com::seagate::kinetic::proto::Command_Security_ACL_Permission;
+using com::seagate::kinetic::proto::Command_Security_ACL_Scope;
+using com::seagate::kinetic::proto::Command_Security_ACL_HMACAlgorithm_HmacSHA1;
+using com::seagate::kinetic::proto::Command_Status;
+using com::seagate::kinetic::proto::Command_P2POperation;
+using com::seagate::kinetic::proto::Command_Synchronization;
+using com::seagate::kinetic::proto::Command_Synchronization_FLUSH;
+using com::seagate::kinetic::proto::Command_Synchronization_WRITEBACK;
+using com::seagate::kinetic::proto::Command_Synchronization_WRITETHROUGH;
+using com::seagate::kinetic::proto::Command_PinOperation_PinOpType_UNLOCK_PINOP;
+using com::seagate::kinetic::proto::Command_PinOperation_PinOpType_LOCK_PINOP;
+using com::seagate::kinetic::proto::Command_PinOperation_PinOpType_ERASE_PINOP;
+using com::seagate::kinetic::proto::Command_PinOperation_PinOpType_SECURE_ERASE_PINOP;
+using com::seagate::kinetic::proto::Message_AuthType_PINAUTH;
+using com::seagate::kinetic::proto::Message_AuthType_HMACAUTH;
 
 using std::shared_ptr;
 using std::string;
@@ -618,28 +618,28 @@ HandlerKey NonblockingKineticConnection::SetACLs(const shared_ptr<const list<ACL
                 Command_Security_ACL_Permission permission;
                 switch (*permission_it) {
                     case READ:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_READ;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_READ;
                         break;
                     case WRITE:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_WRITE;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_WRITE;
                         break;
                     case DELETE:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_DELETE;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_DELETE;
                         break;
                     case RANGE:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_RANGE;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_RANGE;
                         break;
                     case SETUP:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_SETUP;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_SETUP;
                         break;
                     case P2POP:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_P2POP;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_P2POP;
                         break;
                     case GETLOG:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_GETLOG;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_GETLOG;
                         break;
                     case SECURITY:
-                        permission = com::seagate::kinetic::client::proto::Command_Security_ACL_Permission_SECURITY;
+                        permission = com::seagate::kinetic::proto::Command_Security_ACL_Permission_SECURITY;
                         break;
                 }
                 scope->add_permission(permission);

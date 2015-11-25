@@ -141,8 +141,7 @@ ExternalProject_add(
 # Protobuf code generation rules
 set(PROTOC_PATH "${PREFIX}/host/bin/protoc")
 set(PROTO_DIR "${CMAKE_BINARY_DIR}/vendor/src/kinetic-proto")
-set(PROTO_ORIG_PATH "${PROTO_DIR}/kinetic.proto")
-set(PROTO_MODIFIED_PATH "${PROTO_DIR}/kinetic_client.proto")
+set(PROTO_PATH "${PROTO_DIR}/kinetic.proto")
 ExternalProject_add(
     protobuf
     PREFIX ${EXTERNAL_PREFIX}
@@ -154,8 +153,8 @@ ExternalProject_add(
 
 add_custom_command(
     COMMENT "Compiling protobuf"
-    OUTPUT ${GENERATED_SOURCES_PATH}/kinetic_client.pb.h ${GENERATED_SOURCES_PATH}/kinetic_client.pb.cc
-    COMMAND mkdir -p ${GENERATED_SOURCES_PATH} && sed 's/com\\.seagate\\.kinetic\\.proto/com.seagate.kinetic.client.proto/' ${PROTO_ORIG_PATH} > ${PROTO_MODIFIED_PATH} && ${PROTOC_PATH} -I=${PROTO_DIR} --cpp_out=${GENERATED_SOURCES_PATH} ${PROTO_MODIFIED_PATH}
+    OUTPUT ${GENERATED_SOURCES_PATH}/kinetic.pb.h ${GENERATED_SOURCES_PATH}/kinetic.pb.cc
+    COMMAND mkdir -p ${GENERATED_SOURCES_PATH} && ${PROTOC_PATH} -I=${PROTO_DIR} --cpp_out=${GENERATED_SOURCES_PATH} ${PROTO_PATH}
     DEPENDS kinetic-proto protoc protobuf
 )
 set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${GENERATED_SOURCES_PATH})
@@ -197,7 +196,7 @@ if(LIBUNWIND)
 endif()
 
 add_library(kinetic_client
-    ${GENERATED_SOURCES_PATH}/kinetic_client.pb.cc
+    ${GENERATED_SOURCES_PATH}/kinetic.pb.cc
     src/main/hmac_provider.cc
     src/main/kinetic_connection_factory.cc
     src/main/nonblocking_kinetic_connection.cc

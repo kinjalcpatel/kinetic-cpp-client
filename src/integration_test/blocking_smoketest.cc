@@ -26,8 +26,8 @@ using std::shared_ptr;
 using std::make_shared;
 using std::vector;
 
-using com::seagate::kinetic::client::proto::Command_Algorithm_CRC32;
-using com::seagate::kinetic::client::proto::Command_Algorithm_SHA1;
+using com::seagate::kinetic::proto::Command_Algorithm_CRC32;
+using com::seagate::kinetic::proto::Command_Algorithm_SHA1;
 
 TEST_F(IntegrationTest, BlockingSmoketest) {
     ASSERT_TRUE(blocking_connection_->NoOp().ok());

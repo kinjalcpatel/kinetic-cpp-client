@@ -18,11 +18,11 @@
 #ifndef KINETIC_CPP_CLIENT_STATUS_CODE_H_
 #define KINETIC_CPP_CLIENT_STATUS_CODE_H_
 
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode;
+using com::seagate::kinetic::proto::Command_Status_StatusCode;
 using std::string;
 
 enum class StatusCode {

@@ -22,7 +22,7 @@
 #include "kinetic/kinetic.h"
 #include "mock_socket_wrapper_interface.h"
 #include "matchers.h"
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "nonblocking_packet.h"
 
 namespace kinetic {

@@ -20,11 +20,11 @@
 
 #include <memory>
 #include "kinetic/common.h"
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Command_Algorithm;
+using com::seagate::kinetic::proto::Command_Algorithm;
 using std::shared_ptr;
 using std::string;
 using std::make_shared;

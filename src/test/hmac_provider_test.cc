@@ -17,16 +17,16 @@
 
 #include "gtest/gtest.h"
 
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "kinetic/hmac_provider.h"
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Message;
-using com::seagate::kinetic::client::proto::Command;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_SUCCESS;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode_INTERNAL_ERROR;
-using com::seagate::kinetic::client::proto::Message_AuthType_HMACAUTH;
+using com::seagate::kinetic::proto::Message;
+using com::seagate::kinetic::proto::Command;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_SUCCESS;
+using com::seagate::kinetic::proto::Command_Status_StatusCode_INTERNAL_ERROR;
+using com::seagate::kinetic::proto::Message_AuthType_HMACAUTH;
 
 TEST(HmacProviderTest, ComputeHmacHandlesSimpleMessage) {
     HmacProvider hmac_provider;

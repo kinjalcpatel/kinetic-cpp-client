@@ -22,12 +22,12 @@
 #include <memory>
 
 #include "kinetic/kinetic_status.h"
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Message;
-using com::seagate::kinetic::client::proto::Command;
+using com::seagate::kinetic::proto::Message;
+using com::seagate::kinetic::proto::Command;
 
 using std::shared_ptr;
 using std::unique_ptr;

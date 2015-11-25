@@ -18,11 +18,11 @@
 #ifndef KINETIC_CPP_CLIENT_HMAC_PROVIDER_H_
 #define KINETIC_CPP_CLIENT_HMAC_PROVIDER_H_
 
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 
 namespace kinetic {
 
-using com::seagate::kinetic::client::proto::Message;
+using com::seagate::kinetic::proto::Message;
 
 /// Wrapper class that handles computing HMACs. The supplied implementation uses openssl,
 /// but users can supply an alternate implementation that uses a different library (e. g. one

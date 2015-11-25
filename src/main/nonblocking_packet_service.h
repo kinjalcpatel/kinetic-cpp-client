@@ -30,16 +30,16 @@
 #include "kinetic/nonblocking_packet_service_interface.h"
 #include "kinetic/connection_options.h"
 #include "kinetic/hmac_provider.h"
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "nonblocking_packet.h"
 #include "socket_wrapper_interface.h"
 #include "nonblocking_packet_receiver.h"
 #include "nonblocking_packet_sender.h"
 
 namespace kinetic {
-using com::seagate::kinetic::client::proto::Message;
-using com::seagate::kinetic::client::proto::Command;
-using com::seagate::kinetic::client::proto::Command_Status_StatusCode;
+using com::seagate::kinetic::proto::Message;
+using com::seagate::kinetic::proto::Command;
+using com::seagate::kinetic::proto::Command_Status_StatusCode;
 
 using std::string;
 using std::unique_ptr;

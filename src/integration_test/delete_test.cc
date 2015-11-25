@@ -23,7 +23,7 @@ namespace kinetic {
 
 using ::testing::Assign;
 using ::testing::StrictMock;
-using com::seagate::kinetic::client::proto::Command_Algorithm_SHA1;
+using com::seagate::kinetic::proto::Command_Algorithm_SHA1;
 
 using std::make_shared;
 using std::shared_ptr;

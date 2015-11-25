@@ -22,7 +22,7 @@
 
 #include "kinetic/common.h"
 
-#include "kinetic_client.pb.h"
+#include "kinetic/kinetic.pb.h"
 #include "nonblocking_string.h"
 
 namespace kinetic {
@@ -31,7 +31,7 @@ using std::shared_ptr;
 using std::unique_ptr;
 using std::string;
 
-using com::seagate::kinetic::client::proto::Message;
+using com::seagate::kinetic::proto::Message;
 
 enum State {
     kMagic,
